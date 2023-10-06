@@ -39,7 +39,7 @@ jobs:
        - name: checkout Repo
          uses: actions/checkout@v4.1.0 
          with:
-          token: ${{secrets.GITHUB.TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
        - name: Setup Node.js environment
          uses: actions/setup-node@v3.8.1
          with:
