@@ -7,7 +7,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.0
       - run: echo "$(cat hello_world.txt)"
-jobs:
   my-job:
     # Importing a reusable workflow from another repository and branch
     uses: dmangas-dev/actions-learning-pathway/.github/workflows/build-test-deploy.yml@main
