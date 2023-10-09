@@ -1,5 +1,12 @@
 name: use node.js
-on: push
+on: 
+  workflow_call:
+    # Introduced 'inputs' to define parameters that can be passed when calling this workflow
+    inputs:
+      node-version:
+        description: "Node version"
+        required: true
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +26,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.8.1
         with:
-          node-version: "18.x"
+          node-version: ${{ inputs.node-version }}
       - run: npm install
       - run: npm test  
   deploy:
